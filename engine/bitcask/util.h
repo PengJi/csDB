@@ -21,6 +21,9 @@ bool FileExists(const std::string& path);
 // Hash
 uint32_t StrHash(const char* s, int size);
 
+/**
+ * @brief      文件锁
+ */
 class FileLock {
  public:
   FileLock() { }
@@ -34,6 +37,9 @@ class FileLock {
   void operator=(const FileLock&);
 };
 
+/**
+ * @brief      锁操作
+ */
 class LockOpe{
 public:
   int LockOrUnlock(int fd, bool lock);
@@ -44,6 +50,9 @@ public:
 
 };
 
+/**
+ * @brief      文件操作
+ */
 class FileOpe{
 public:
   time_t TimeStamp() {
@@ -69,7 +78,9 @@ private:
   void operator=(const FileOpe& fileope);
 };
 
-//状态
+/**
+ * @brief      状态
+ */
 class Status {
  public:
   Status() : code_(kOk) { }
